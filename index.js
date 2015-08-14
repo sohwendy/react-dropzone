@@ -70,8 +70,8 @@ var Dropzone = React.createClass({
     var files;
     if (e.dataTransfer) {
       files = e.dataTransfer.files;
-    } else if (e.target) {
-      files = e.target.files;
+    } else if (e.currentTarget) {
+      files = e.currentTarget.files;
     }
 
     var maxFiles = (this.props.multiple) ? files.length : 1;
