@@ -28,7 +28,8 @@ var Dropzone = React.createClass({
     supportClick: React.PropTypes.bool,
     accept: React.PropTypes.string,
     multiple: React.PropTypes.bool,
-    activeClassName: React.PropTypes.string
+    activeClassName: React.PropTypes.string,
+    inputId: React.PropTypes.string
   },
 
   onDragLeave: function(e) {
@@ -126,7 +127,8 @@ var Dropzone = React.createClass({
         },
         React.createElement('input',
           {
-            style: { display: 'none' },
+            id: this.props.inputId,
+            style: {opacity: 0.001, width: 1, height: 1},
             type: 'file',
             multiple: this.props.multiple,
             ref: 'fileInput',
